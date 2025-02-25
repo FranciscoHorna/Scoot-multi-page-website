@@ -1,289 +1,171 @@
-:root {
-    /* colors */
-    --yellow: hsl(40, 97%, 58%);
-    --dark: hsl(215, 14%, 23%);
-    --dark-navy: hsl(216, 17%, 35%);
-    --dim-grey: hsl(217, 12%, 62%);
-    --light-grey: hsl(212, 41%, 93%);
-    --snow: hsl(214, 37%, 96%);
-    --light-yellow: hsl(39, 100%, 94%);
+/* ===== About Me Specific Styles ===== */
 
-    /* font size for mobile */
-    --fs-m-v1-700: 2.5rem;
-    --fs-m-v2-700: 2rem;
-    --fs-m-v3-700: 1.5rem;
-    --fs-m-v4-700: 1.125rem;
-
-    /* font familly for tablet & desktop*/
-    --ff-body: 'Lexend Deca', sans-serif;
-    --ff-heading: 'Space Mono', monospace;
-
-    /* font size */
-    --fs-400: .938rem;
-    --fs-v1-700: 3.5rem;
-    --fs-v2-700: 3rem;
-    --fs-v3-700: 2.5rem;
-    --fs-v4-700: 1.5rem;
-    --fs-v5-700: 1.125rem;
-
-    /* font weight */
-    --fw-400: 400;
-    --fw-700: 700;
+.about-main {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--snow);
 }
 
-/* hero section */
-
-.hero-desc .text h1 {
-    padding: 2rem 0;
+.about-profile-section {
+    padding: 3rem 0;
 }
 
-.white-circle {
-    display: none;
-}
-/* end hero section */
-
-
-/* facility section */
-.facility-container {
-    margin: 5rem 0;
-}
-
-.facility .facility-text h2 {
-    font-size: var(--fs-m-v2-700);
-    color: var(--dark-navy);
-}
-/* end facility section */
-
-
-/* our values section */
-.values-container h3 {
-    font-size: var(--fs-m-v2-700);
-    color: var(--dark-navy);
-    padding: 1rem 0;
-    margin-bottom: 3rem;
-    text-align: center;
-}
-
-.value {
+.about-profile-container {
     display: flex;
     align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 1.1rem;
-    margin-bottom: 3rem;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-.value-img {
-    position: relative;
-    margin-bottom: 2rem;
+.reverse {
+    flex-direction: row-reverse;
 }
 
-.value-img img {
+.about-profile-img {
+    flex: 1;
+    max-width: 350px;
+    min-width: 250px;
+    width: 100%;
+}
+
+.circle-img {
+    width: 100%;
     border-radius: 50%;
+    border: 4px solid var(--yellow);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
-.fill {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--yellow);
-    height: 96px;
-    width: 96px;
-    border-radius: 50%;
-    font-size: var(--fs-m-v3-700);
-    color: var(--dark-navy);
-    position: absolute;
-    top: 75%;
-    right: 30%;
-    z-index: 999;
+.circle-img:hover {
+    transform: scale(1.05);
+}
+
+.about-profile-text {
+    flex: 1.5;
+    padding: 1rem;
+}
+
+.about-profile-text h2 {
     font-family: var(--ff-heading);
-}
-
-.value-text h4 {
-    font-size: var(--fs-m-v3-700);
-    font-family: var(--ff-heading);
-    color: var(--dark-navy);
-    padding: 1.2rem 0;
-    color: var(--dark-navy);
-}
-
-.value-text p {
-    color: var(--dark-navy);
-}
-/* end our value section */
-
-
-/* FAQs section */
-.faqs-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.faqs-all {
-    padding: 1rem 1.5rem;
-}
-
-.faqs-container h5 {
     font-size: var(--fs-m-v2-700);
     color: var(--dark-navy);
-    padding: 2rem 0;
+    margin-bottom: 1.5rem;
 }
 
-.faqs-desc {
-    background-color: var(--snow);
-    padding: 1.2rem 1.8rem;
-    width: 90vw;
-    transition: .6s cubic-bezier(0.12, 0, 0.39, 0);
-    margin-bottom: 1.2rem;
-}
-
-.faqs-desc:hover,
-.faqs-desc:focus {
-    background: #FFF4E0;
-}
-
-.faqs-heading h6 {
-    font-size: var(--fs-m-v3-700);
-    color: var(--dark-navy);
-    margin-bottom: 2rem;
-}
-
-.faqs-icon {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-}
-
- .faqs-icon span {
-    font-size: var(--fs-m-v4-700);
-    font-family: var(--ff-heading);
-    color: var(--dim-grey);
-    text-align: left;
-    padding: 1.2rem 0;
-}
-
-.faqs-text p {
-    text-align: left;
+.about-profile-text p {
+    font-family: var(--ff-body);
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: var(--dark);
-    /* cursor: pointer; */
 }
 
-.faqs-text {
-    display: none;
-    animation-name: faqs-text;
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes faqs-text {
-    from {
-    opacity: 0;
-    }
-
-    top {
-    opacity: 1;
-    }
-}
-
-.active span {
-   color: var(--dark);
-}
-
-.arrow-active {
-    transform: scaleY(-1);
-}
-
-.safe-driving {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.safe-driving h6 {
+/* Section Divider */
+.divider-heading {
     text-align: center;
-    margin-top: 3rem;
-}
-/* end FAQs section */
-
-
-/* media query for tablet */
-@media only screen and (min-width: 768px) {
-    .white-circle {
-        display: block;
-    }
-
-    .hero-desc {
-    display: flex;
-    flex-direction: row;
+    padding: 4rem 0;
+    position: relative;
 }
 
-.hero-desc .text h1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 3rem;
-  }
-
-  .facility .facility-text h2 {
-      font-size: var(--fs-v2-700);
-      width: 485px;
-      text-align: center;
-  }
-
-  .facility .facility-text p {
-      width: 620px;
-  }
-
-  .values-container h3 {
-      font-size: var(--fs-v2-700);
-  }
-
-  .value-text h4 {
-      font-size: var(--fs-m-v2-700);
-  }
-
-  .value-text p {
-      width: 490px;
-  }
+.divider-heading h3 {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-m-v2-700);
+    color: var(--dark-navy);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1rem;
 }
-/* end media query for tablet */
 
+.divider-heading h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--yellow);
+    border-radius: 2px;
+}
 
-/* media query for desktop */
-@media only screen and (min-width: 920px) {
-    .facility .facility-text h2 {
-        text-align: left;
-    }
+.alt-bg {
+    background: var(--snow);
+}
 
-    .facility .facility-text {
-        flex: 1;
-        max-width: 650px;
-        align-items: flex-start;
-        padding: 2rem 5.35rem;
-    }
-
-    .values-container {
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-profile-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 1rem;
         text-align: center;
     }
 
-    .values {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 3rem;
+    .reverse {
+        flex-direction: column;
     }
 
-    .value-text p {
-        width: 350px;
+    .about-profile-img {
+        max-width: 250px;
     }
 
-    .faqs-heading h6 {
-        font-size: var(--fs-v3-700);
+    .divider-heading {
+        padding: 3rem 0;
     }
-
 }
-/* end media query for desktop */
+
+@media (min-width: 920px) {
+    .about-profile-text h2,
+    .divider-heading h3 {
+        font-size: var(--fs-v2-700);
+    }
+}
+
+/* About Me Image Container */
+.about-profile-img {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin: 0 auto;
+}
+
+/* Circle frame (maintains consistent border) */
+.circle-frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--yellow);
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+
+
+.rotating-img:hover {
+    transform: rotate(10deg);
+}
+
+.about-profile-img img {
+    display: block; /* Ensures no extra spaces from inline images */
+    opacity: 1 !important; /* Prevents hidden image issues */
+}
+
+/* Rotating Images */
+.rotating-img {
+    position: absolute;
+    width: 94%;
+    height: 94%;
+    object-fit: cover;
+    border-radius: 50%;
+    top: 3%;
+    left: 3%;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Ensure first image is visible */
+.rotating-img:first-child {
+    opacity: 1;
+}

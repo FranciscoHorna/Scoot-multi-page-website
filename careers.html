@@ -9,236 +9,96 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
-
     <link rel="shortcut icon" href="./assets/favicon-32x32.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/about.css">
-    <link rel="stylesheet" href="./css/careers.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&family=Lexend+Deca&display=swap" rel="stylesheet">
 
-    <title>Frontend Mentor | Scoot</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/careers.css">
 </head>
 
 <body>
-
-    <!-- header section -->
-    <header>
+    <!-- Consistent Header -->
+    <header style="position: relative; z-index: 10; background: white; padding: 10px 0; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
         <section id="header">
             <div class="header container">
                 <nav>
                     <div class="nav-bar">
                         <div class="logo">
-                            <a href="./index.html"><img src="./assets/logo.svg"></a>
+                            <a href="./index.html"><img src="./assets/img/namelogo.png" style="width: 240px; height: auto;" alt="Your Name Logo"></a>
                         </div>
                         <div class="nav-list">
                             <div class="hamburger">
                                 <div class="bar"></div>
                             </div>
                             <ul class="nav-item">
-                                <li><a href="./about.html">about</a></li>
-                                <li><a href="./location.html">Location</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <a class="btn" href="#">Get Scootin</a>
+                                <li><a href="./about.html">About me</a></li>
+                                <li><a href="./location.html">Language & Literacy Project</a></li>
+                                <li><a href="./careers.html" aria-current="page">Learning English</a></li>
+                                <li><a href="./culture.html">Cultural Identity</a></li>
                             </ul>
-                        </div>
-                        <div class="nav-btn">
-                            <a class="btn" href="">Get Scootin</a>
                         </div>
                     </div>
                 </nav>
             </div>
+        </section>
+    </header>
 
-            <!-- hero section -->
-            <section class="hero">
-                <div class="hero-container">
-                    <picture>
-                        <source media="(min-width: 57.5rem)" srcset="./assets/img/careers-locations-hero-desktop.jpg">
-                        <source media="(min-width: 48rem)" srcset="./assets/img/careers-locations-hero-tablet.jpg">
-                        <img src="./assets/img/careers-location-hero-mobile.jpg" alt="">
-                    </picture>
-                    <div class="hero-desc">
-                        <div class="text">
-                            <h1>Careers</h1>
-                        </div>
-                        <div class="white-circle">
-                            <img src="./assets/patterns/white-circles.svg" alt="">
-                        </div>
-                    </div>
+    <!-- Main Content -->
+    <section class="culture-section">
+        <div class="container">
+            <!-- Divider -->
+            <div class="divider-heading">
+                <h3>My Fear with Public Speaking</h3>
+            </div>
+
+            <!-- Before NMSU -->
+            <div class="culture-item">
+                <img src="./assets/before-presentation.jpg" 
+                     alt="Nervous student preparing presentation" 
+                     class="culture-img">
+                <div class="culture-text">
+                    <h2>Presenting in Spanish</h2>
+                    <p>
+                    I used to hate public speaking because I had problems with nervousness, memory, anxiety, and lack of confidence. I was terrified to present any topic even though I was an expert and I was speaking in my native language, Spanish. 
+                    </p>
                 </div>
-            </section>
-            <!-- end hero section -->
+            </div>
 
-            <!-- main section -->
-            <main>
-                <div class="main-container">
-
-                    <section>
-                        <div class="facility-container">
-                            <div class="facility item-one">
-                                <div class="images">
-                                    <img class="image" src="./assets/img/join-us.jpg" alt="">
-                                    <picture>
-                                        <source media="(min-width: 57.5rem)"
-                                            srcset="./assets/patterns/left-downward-arrow.svg">
-                                        <source media="(min-width: 48rem)"
-                                            srcset="./assets/patterns/left-downward-arrow.svg">
-                                        <img src="./assets/patterns/left-downward-arrow.svg" alt="">
-                                    </picture>
-                                </div>
-                                <div class="facility-text">
-                                    <h2>Care to join our mission?</h2>
-                                    <p>We’re always looking for ambitious individuals to help us on our journey. If
-                                        you’re passionate about our mission to provide clean, accessible transport to
-                                        improve urban living we want to hear from you!
-                                    </p>
-                                    <a class="btn" href="#">Say hello</a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- end facility section -->
-
-                    <!-- why join us section -->
-                    <section>
-                        <div class="values-container">
-                            <h3>Why join us?</h3>
-                            <div class="values">
-                                <div class="value">
-                                    <div class="value-img">
-                                        <img src="./assets/img/our-tech.jpg" alt="">
-                                        <span class="fill">01</span>
-                                    </div>
-                                    <div class="value-text">
-                                        <h4>Our tech</h4>
-                                        <p>We’re using cutting edge technology to drive accessible urban transportation
-                                            forward. Our fully electric scooters are a joy to ride!
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="value">
-                                    <div class="value-img">
-                                        <img src="./assets/img/our-integrity.jpg" alt="">
-                                        <span class="fill">02</span>
-                                    </div>
-                                    <div class="value-text">
-                                        <h4>Our integrity</h4>
-                                        <p>We are fully committed to deliver a great yet safe, sustainable
-                                            micro-mobility
-                                            experience in every city we serve.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="value">
-                                    <div class="value-img">
-                                        <img src="./assets/img/our-community.jpg" alt="">
-                                        <span class="fill">03</span>
-                                    </div>
-                                    <div class="value-text">
-                                        <h4>Our community</h4>
-                                        <p>We support every community we serve. All workers are paid a living wage based
-                                            on
-                                            their location and are Scoot employees.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- end why join us section -->
-
-                    <!-- general section -->
-                    <section>
-                        <div class="general-container">
-                            <div class="general">
-                                <div class="general-desc">
-                                    <h5>General Manager</h5>
-                                    <span>Jakarta, indonesia</span>
-                                </div>
-                                <a class="btn" href="#">Apply</a>
-                            </div>
-
-                            <div class="general">
-                                <div class="general-desc">
-                                    <h5>UI/UX Designer</h5>
-                                    <span>yokohama, japan</span>
-                                </div>
-                                <a class="btn" href="#">Apply</a>
-                            </div>
-
-                            <div class="general">
-                                <div class="general-desc">
-                                    <h5>Graphic Designer</h5>
-                                    <span>New York, United States</span>
-                                </div>
-                                <a class="btn" href="#">Apply</a>
-                            </div>
-
-                            <div class="general">
-                                <div class="general-desc">
-                                    <h5>UX Analyst</h5>
-                                    <span>New York, United States</span>
-                                </div>
-                                <a class="btn" href="#">Apply</a>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- end general section -->
-
-                    <!-- sign up section -->
-                    <section>
-                        <div class="signup-container">
-                            <div class="signup">
-                                <div class="signup-heading">
-                                    <h6>Sign up and Scoot off today</h6>
-                                </div>
-                                <div class="signup-icon">
-                                    <a href="#"><img src="./assets/icons/app-store.svg" alt=""></a>
-                                    <a href="#"><img src="./assets/icons/google-play.svg" alt=""></a>
-                                </div>
-                                <picture>
-                                    <source media="(min-width: 48rem)" srcset="./assets/patterns/semi-circles.svg">
-                                    <img src="./assets/patterns/semi-circle-mobile.svg" alt="">
-                                </picture>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- end sign up section -->
+            <!-- NMSU Transformation -->
+            <div class="culture-item reverse">
+                <img src="./assets/nmsu-class.jpg" 
+                     alt="NMSU classroom with engaged students" 
+                     class="culture-img">
+                <div class="culture-text">
+                    <h2>The Turning Point at NMSU: Public Speaking in English</h2>
+                    <p>You can imagine that if public speaking was hard for me in my own native language, in English it would have been worse. In my first semester at 
+                       New Mexico State University, I had to take a class called "Introduction to Communication" and I was terrified because I had to make two presentations of 7 minutes each throughout the semester.
+                        In the first presentation, I was so nervous that my hands were shaking, I forgot everything and I had really bad pronunciation. I was disappointed with myself because I didn't get a good grade. Therefore,
+                        I proposed to improve in public speaking to get an A in the class, and I improved by doing the following:
+                    </p>
+                    <ul class="skills-list">
+                        <li>Practicing my English pronunciation by watching videos on YouTube.</li>
+                        <li>Understanding the topic rather than memorizing a script.</li>
+                        <li>Practicing a test presentation with my friends to seek feedback.</li>
+                        <li>Learning from other speakers.</li>
+                    </ul>
                 </div>
-            </main>
-            <!-- end main section -->
+            </div>
 
-            <!-- footer section -->
-            <footer>
-                <div class="footer-container">
-                    <div class="footer-info">
-                        <div class="footer-logo">
-                            <a href="#"><img src="./assets/logo.svg" alt=""></a>
-                        </div>
-                        <nav>
-                            <ul class="nav-links">
-                                <li><a href="./about.html">about</a></li>
-                                <li><a href="./location.html">location</a></li>
-                                <li><a href="#">careers</a></li>
-                            </ul>
-                        </nav>
-                        <ul class="social-icons">
-                            <li><a href="#" title=" Join us on Facebook"><i class="fab fa-facebook-square"
-                                        aria-hidden="true"></i></a></li>
-                            <li><a href="#" title=" Join us on Twitter"><i class="fab fa-twitter"
-                                        aria-hidden="true"></i></a>
-                            </li>
-                            <li><a href="#" title=" Join us on Pinterest"><i class="fab fa-pinterest-square"
-                                        aria-hidden="true"></i></a></li>
-                            <li><a href="#" title=" Join us on Instagram"><i class="fab fa-instagram-square"
-                                        aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
+            <!-- Final Presentation -->
+            <div class="culture-item">
+                <img src="./assets/final-presentation.jpg" 
+                     alt="Confident student presenting to class" 
+                     class="culture-img">
+                <div class="culture-text">
+                    <h2>My Achievement</h2>
+                    <p>In the last presentation of the communication course, I was well prepared to deliver the presentation on time without any issues I had in the past. Finally, on the last day of classes, the entire class congratulated me on my improvement in public speaking. I was proud of myself because I overcame my fear of public speaking and improved my English skills.
+                    </p>
                 </div>
-            </footer>
-            <!-- end footer section -->
-            <script src="./js/app.js"></script>
+            </div>
+        </div>
+    </section>
 </body>
-
 </html>

@@ -1,0 +1,107 @@
+/* ===== Culture Section Styles ===== */
+.culture-section {
+    padding: 4rem 1rem;
+    background: var(--snow); /* Use a light background for contrast */
+}
+
+.culture-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.culture-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.culture-item.reverse {
+    grid-template-columns: 1fr 1fr;
+    direction: rtl; /* Reverse the order for .reverse items */
+}
+
+.culture-item.reverse .culture-text {
+    direction: ltr; /* Ensure text reads left-to-right */
+}
+
+.culture-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.culture-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.culture-text {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.culture-text h2 {
+    font-family: var(--ff-heading);
+    font-size: 2rem;
+    color: var(--dark-navy);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.culture-text p {
+    font-family: var(--ff-body);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .culture-item {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .culture-item.reverse {
+        direction: ltr; /* Reset direction for mobile */
+    }
+
+    .culture-item.reverse .culture-text {
+        direction: ltr; /* Ensure text reads left-to-right */
+    }
+
+    .culture-text {
+        padding: 1rem;
+    }
+
+    .culture-text h2 {
+        font-size: 1.75rem;
+    }
+
+    .culture-text p {
+        font-size: 1rem;
+    }
+}
+
+.divider-heading {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 40px 0;
+}
+
+.divider-heading::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 3px;
+    background: #0077b6;
+    margin: 10px auto;
+}

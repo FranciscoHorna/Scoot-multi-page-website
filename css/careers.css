@@ -1,89 +1,152 @@
+/* careers.css */
 :root {
-    /* colors */
-    --yellow: hsl(40, 97%, 58%);
-    --dark: hsl(215, 14%, 23%);
-    --dark-navy: hsl(216, 17%, 35%);
-    --dim-grey: hsl(217, 12%, 62%);
-    --light-grey: hsl(212, 41%, 93%);
-    --snow: hsl(214, 37%, 96%);
-    --light-yellow: hsl(39, 100%, 94%);
+    --dark-navy: #2c3e50;
+    --accent-color: #3498db;
 
-    /* font size for mobile */
-    --fs-m-v1-700: 2.5rem;
-    --fs-m-v2-700: 2rem;
-    --fs-m-v3-700: 1.5rem;
-    --fs-m-v4-700: 1.125rem;
-
-    /* font familly for tablet & desktop*/
-    --ff-body: 'Lexend Deca', sans-serif;
-    --ff-heading: 'Space Mono', monospace;
-
-    /* font size */
-    --fs-400: .938rem;
-    --fs-v1-700: 3.5rem;
-    --fs-v2-700: 3rem;
-    --fs-v3-700: 2.5rem;
-    --fs-v4-700: 1.5rem;
-    --fs-v5-700: 1.125rem;
-
-    /* font weight */
-    --fw-400: 400;
-    --fw-700: 700;
 }
 
-/* general section */
-.general-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 5rem 0;
-    text-align: center;
+/* Base Styles */
+body {
+    background: var(--snow);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-.general {
-    width: 95vw;
-    height: 25vh;
-    display: flex;
+.culture-section {
+    padding: 4rem 1.5rem;
+    background: var(--snow);
+    line-height: 1.6;
+}
+
+.culture-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Image Styling */
+.culture-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.culture-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Grid Layout */
+.culture-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+}
+
+.culture-item.reverse {
+    direction: rtl;
+}
+
+.culture-item.reverse .culture-text {
+    direction: ltr;
+}
+
+/* Text Content */
+.culture-text {
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.culture-text:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.culture-text h2 {
+    font-size: 2rem;
     color: var(--dark-navy);
-    background-color: var(--snow);
+    margin-bottom: 1rem;
 }
 
-.general-desc {
+.culture-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
     margin-bottom: 1.5rem;
 }
 
-.general-desc h5 {
-    font-size: var(--fs-m-v4-700);
-    margin-bottom: .5rem;
+/* Skills List */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
 }
-/* end general section */
 
+.skills-list li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    font-weight: 500;
+}
 
-/* sign up section */
-.signup h6 {
-    font-size: var(--fs-m-v2-700);
+.skills-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .culture-item {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .culture-item.reverse {
+        direction: ltr;
+    }
+
+    .culture-img {
+        max-width: 100%;
+    }
+
+    .culture-text {
+        padding: 1.5rem;
+    }
+
+    .culture-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .culture-text p {
+        font-size: 1rem;
+    }
+}
+.divider-heading {
     text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 40px 0;
 }
 
-/* end sign up section */
-
-
-/* media query for tablet */
-@media only screen and  (min-width: 768px) {
-    .general {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 2.5rem 2rem;
-        text-align: left;
-        width: 90vw;
-    }
-
-    .general-desc h5 {
-        font-size: var(--fs-v4-700);
-    }
+.divider-heading::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 3px;
+    background: #0077b6;
+    margin: 10px auto;
 }
