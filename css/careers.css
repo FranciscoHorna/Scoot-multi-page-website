@@ -1,152 +1,147 @@
-/* careers.css */
-:root {
-    --dark-navy: #2c3e50;
-    --accent-color: #3498db;
+/* ============================================ */
+/* Sound Page Styles (careers.html)             */
+/* ============================================ */
 
+.sound-section {
+    /* Uses the --snow variable you had in movement.css */
+    background: var(--snow, #f5f5f5); 
+    padding: 4rem 1rem;
 }
 
-/* Base Styles */
-body {
-    background: var(--snow);
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-.culture-section {
-    padding: 4rem 1.5rem;
-    background: var(--snow);
-    line-height: 1.6;
-}
-
-.culture-section .container {
-    max-width: 1200px;
+.sound-section .container {
+    max-width: 900px; /* Optimal width for reading */
     margin: 0 auto;
 }
 
-/* Image Styling */
-.culture-img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
+.sound-content {
+    background: #ffffff;
+    padding: 3rem;
     border-radius: 12px;
-    box-shadow: var(--shadow);
-    object-fit: cover;
-    aspect-ratio: 16/9;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.culture-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+@media (max-width: 768px) {
+    .sound-content {
+        padding: 1.5rem;
+    }
 }
 
-/* Grid Layout */
-.culture-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin-bottom: 3rem;
+/* --- Header --- */
+/* This re-uses the style from your other pages for consistency */
+.sound-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #FFD700; /* Yellow divider */
+    padding-bottom: 1rem;
 }
 
-.culture-item.reverse {
-    direction: rtl;
+.sound-header h1 {
+    font-family: var(--ff-heading, 'Space Mono', monospace);
+    font-size: 2.5rem;
+    color: var(--dark-navy, #333);
 }
 
-.culture-item.reverse .culture-text {
-    direction: ltr;
+@media (max-width: 768px) {
+    .sound-header h1 {
+        font-size: 2rem;
+    }
 }
 
-/* Text Content */
-.culture-text {
-    padding: 2rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.culture-text:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.culture-text h2 {
-    font-size: 2rem;
-    color: var(--dark-navy);
-    margin-bottom: 1rem;
-}
-
-.culture-text p {
+/* --- Content Typography --- */
+.sound-content p {
+    font-family: var(--ff-body, 'Lexend Deca', sans-serif);
     font-size: 1.1rem;
-    line-height: 1.7;
-    color: #444;
+    line-height: 1.8;
+    color: var(--dark, #444);
     margin-bottom: 1.5rem;
 }
 
-/* Skills List */
-.skills-list {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
+/* ============================================ */
+/* Videos Section Styles                        */
+/* ============================================ */
+.videos-section {
+    background: var(--snow, #f5f5f5);
+    padding: 0 1rem 4rem 1rem; /* Padding at bottom, no padding at top */
 }
 
-.skills-list li {
-    padding: 0.5rem 0;
+.videos-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Copied from movement.css */
+.video-container {
     position: relative;
-    padding-left: 1.5rem;
-    font-weight: 500;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 8px; /* Optional: adds rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.skills-list li::before {
-    content: "•";
+/* Add space between the two videos */
+.video-container + .video-container {
+    margin-top: 2rem;
+}
+
+.video-container iframe {
     position: absolute;
+    top: 0;
     left: 0;
-    color: var(--accent-color);
-    font-size: 1.3rem;
-    line-height: 1;
+    width: 100%;
+    height: 100%;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .culture-item {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+/* ============================================ */
+/* References Section Styles (Copied)           */
+/* ============================================ */
 
-    .culture-item.reverse {
-        direction: ltr;
-    }
-
-    .culture-img {
-        max-width: 100%;
-    }
-
-    .culture-text {
-        padding: 1.5rem;
-    }
-
-    .culture-text h2 {
-        font-size: 1.8rem;
-    }
-
-    .culture-text p {
-        font-size: 1rem;
-    }
+.references-section {
+    background: #ffffff; /* White background */
+    padding: 4rem 1rem;
+    border-top: 1px solid #eee; /* Light separator line */
 }
-.divider-heading {
+
+.references-section .container {
+    max-width: 900px; /* Match the article width */
+    margin: 0 auto;
+}
+
+.references-section h2 {
+    font-family: var(--ff-heading, 'Space Mono', monospace);
+    font-size: 2rem;
+    color: var(--dark-navy, #333);
+    margin-bottom: 2rem;
     text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 40px 0;
+    border-bottom: 3px solid #FFD700; /* Yellow divider */
+    padding-bottom: 1rem;
+    display: inline-block; /* Keeps divider from full width */
 }
 
-.divider-heading::after {
-    content: "";
-    display: block;
-    width: 80%;
-    height: 3px;
-    background: #0077b6;
-    margin: 10px auto;
+/* Center the heading */
+.references-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reference-list p {
+    font-family: var(--ff-body, 'Lexend Deca', sans-serif);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.reference-list a {
+    color: var(--dark-navy, #007bff);
+    text-decoration: none;
+}
+
+.reference-list a:hover {
+    text-decoration: underline;
 }

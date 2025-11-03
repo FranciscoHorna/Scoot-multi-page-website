@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Space+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Space+Mono:wght@700&display=swap');
 
 :root {
     /* colors */
@@ -10,13 +10,7 @@
     --snow: hsl(214, 37%, 96%);
     --light-yellow: hsl(39, 100%, 94%);
 
-        /* font size for mobile */
-    --fs-m-v1-700: 2.5rem;
-    --fs-m-v2-700: 2rem;
-    --fs-m-v3-700: 1.5rem;
-    --fs-m-v4-700: 1.25rem;
-
-       /* font familly for tablet & desktop*/
+        /* font familly for tablet & desktop*/
     --ff-body: 'Lexend Deca', sans-serif;
     --ff-heading: 'Space Mono', monospace;
 
@@ -33,55 +27,64 @@
     --fw-700: 700;
 }
 
- /* reset setting */
- *,
- *::after,
- *::before {
+    /* reset setting */
+    *,
+    *::after,
+    *::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
- }
+    }
 
- :focus {
-     outline: none;
- }
+    :focus {
+        outline: none;
+    }
 
- picture,
- img {
+    picture,
+    img {
     min-width: 100%;
     display: block;
- }
+    }
 
- body {
+/* * ============================================
+ * BODY FIX
+ * This makes the body a flex container
+ * ============================================
+*/
+body {
     font-family: var(--ff-body);
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     scroll-behavior: smooth;
     line-height: 1.5;
     overflow-x: hidden;
- }
+    
+    /* These lines fix the "huge picture" layout */
+    display: flex;
+    flex-direction: column;
+}
 
- h1,
- h2,
- h3,
- h4,
- h5,
- h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
     font-family: var(--ff-heading);
     line-height: 1.1; 
- }
+    }
 
- a {
+    a {
     text-decoration: none;
- }
+    }
 
- li {
+    li {
     list-style: none;
- }
- /* end reset setting */
+    }
+    /* end reset setting */
 
 
- /* global style */
+    /* global style */
 .btn {
     display: flex;
     align-items: center;
@@ -101,16 +104,21 @@
     color: var(--yellow);
     border: 3px solid var(--yellow);
 }
- /* end global style */
+    /* end global style */
 
 
 /* header section */
 #header {
+    /* * ============================================
+     * HEADER FIX
+     * Removed z-index and kept position relative
+     * ============================================
+    */
     position: relative;
-    z-index: 1000;
     width: 100vw;
     height: auto;
     overflow: hidden;
+    background: white; /* Added this to ensure it's not transparent */
 }
 
 #header .header {
@@ -139,7 +147,7 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    z-index: 1;
+    z-index: 1000; /* z-index is OK here for the mobile menu */
     transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1) left;
     padding: 3rem 2rem;
 }
@@ -170,6 +178,7 @@
     justify-content: center;
     cursor: pointer;
     transform: scale(.7);
+    z-index: 1001; /* Make sure hamburger is on top */
 }
 
 #header .hamburger:after {
@@ -217,43 +226,106 @@
 .nav-btn {
     display: none;
 }
+
+.logo img {
+    width: 240px; 
+    height: auto;
+}
 /*end header section */
 
 
-/* hero section */
-.hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* * ============================================
+ * HERO SECTION FIXES
+ * ============================================
+*/
+main.hero-container {
     position: relative;
+    flex: 1; /* This is the key: makes it fill remaining space */
+    overflow: hidden; /* Contains all positioned children */
 }
 
-.hero-container picture {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+main.hero-container picture,
+main.hero-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 
+/* This is the overlay for readability */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 40% dark overlay */
+    z-index: 1;
+}
+
+/* This is the text block */
 .hero-desc {
+    /* This is the text position fix */
+    position: absolute;
+    top: 45%; /* A bit up from the middle (50%) */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* On top of the overlay */
+    
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 0rem 1.5rem;
-    position: absolute;
-    top: 20%;
+    width: 90%; /* Prevents text from touching edges */
 }
 
 .hero-desc h1 {
-    font-size: var(--fs-m-v1-700);
+    font-size: 4rem;
     text-align: center;
     color: var(--light-grey);
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
 }
 
 .hero-desc p {
     text-align: center;
     color: var(--light-grey);
-    padding: 1.4rem 0;
+    padding: 0.5rem 0;
+}
+
+/* This is the subtitle text */
+.hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem; 
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* This is your image reference */
+.hero-image-reference {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 2; /* On top of the overlay */
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
+
+.hero-image-reference p {
+    font-family: var(--ff-body, 'Lexend Deca', sans-serif);
+    font-size: 0.8rem;
+    color: var(--light-grey, #f5f5f5);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.hero-image-reference p i {
+    font-style: italic;
 }
 
 .right-arrow {
@@ -419,7 +491,7 @@
     transition: .6s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-.nav-links  a:hover,
+.nav-links     a:hover,
 .nav-links a:focus {
     color: var(--yellow);
 }
@@ -563,6 +635,18 @@
 .social-icons {
     margin: 0;
 }
+
+/* Responsive text sizes */
+@media (max-width: 768px) {
+    .hero-desc h1 {
+        font-size: 2.5rem; /* Smaller on mobile */
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem; /* Smaller on mobile */
+    }
+}
+
 }
 /* end media query for tablet */
 

@@ -1,0 +1,290 @@
+/* ===== Movement Section Styles ===== */
+.movement-section {
+    padding: 4rem 1rem;
+    background: var(--snow);
+}
+
+.movement-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.movement-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+/* * This is the <figure> element which wraps the image 
+ * and figcaption. We reset its default margin.
+*/
+.movement-figure {
+    margin: 0;
+    padding: 0;
+}
+
+/* * CSS FIX: 
+ * We target the .movement-figure (the grid item) 
+ * instead of the .movement-img (the content inside it)
+ * for the re-ordering.
+*/
+.movement-item.reverse .movement-figure {
+    grid-column: 2; 
+    grid-row: 1;    
+}
+
+.movement-item.reverse .movement-text {
+    grid-column: 1; 
+    grid-row: 1;    
+}
+
+.movement-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* This ensures the image is part of the figure */
+    display: block; 
+}
+
+.movement-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.movement-text {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.movement-text h2 {
+    font-family: var(--ff-heading);
+    font-size: 2rem;
+    color: var(--dark-navy);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.movement-text p {
+    font-family: var(--ff-body);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+}
+
+/* ============================================ */
+/* UPDATED Divider Heading                      */
+/* ============================================ */
+
+/* * This is the wrapper. We're adding the border-bottom
+ * and padding to match the style from location.html
+*/
+.divider-heading {
+    text-align: center;
+    /* * THIS IS THE FIX:
+     * margin: 40px 0; was changed to margin-top: 0;
+    */
+    margin-top: 0; 
+    margin-bottom: 3rem; /* Added space below */
+    
+    /* NEW: Copied from .place-header */
+    border-bottom: 3px solid #FFD700; /* Yellow line */
+    padding-bottom: 1rem;
+}
+
+/* * This styles the text itself. We're increasing
+ * the font-size and setting the color.
+*/
+.divider-heading h3 {
+    /* UPDATED: To match .place-header h1 */
+    font-family: var(--ff-heading, 'Space Mono', monospace);
+    font-size: 2.5rem; /* This is the size you wanted */
+    color: var(--dark-navy, #333);
+    
+    /* Resets */
+    margin: 0;
+    padding: 0;
+    line-height: 1.3;
+}
+
+/* * REMOVED: We no longer need the ::after pseudo-element
+ * because the border-bottom on the parent does the job.
+*/
+.divider-heading::after {
+    display: none; /* Disables the old line */
+}
+
+/* ============================================ */
+/* Responsive Design                            */
+/* ============================================ */
+@media (max-width: 768px) {
+    .movement-item {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* * CSS FIX:
+     * This ensures the visual order is correct on mobile.
+     * We target the .movement-figure and .movement-text.
+    */
+    .movement-item.reverse .movement-figure {
+        order: 2; /* Show image second */
+    }
+
+    .movement-item.reverse .movement-text {
+        order: 1; /* Show text first */
+    }
+    
+    /* Reset grid-column/row from desktop */
+    .movement-item.reverse .movement-figure,
+    .movement-item.reverse .movement-text {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .movement-text {
+        padding: 1rem;
+    }
+
+    .movement-text h2 {
+        font-size: 1.75rem;
+    }
+
+    .movement-text p {
+        font-size: 1rem;
+    }
+
+    /* Responsive fix for new heading */
+    .divider-heading h3 {
+        font-size: 2rem; /* A bit smaller on mobile */
+    }
+}
+
+
+/* ======================================== */
+/* Styles for New Content (Added)           */
+/* ======================================== */
+
+/* 1. Styling for Image References */
+.reference {
+    font-size: 0.8rem; /* Small text */
+    font-style: italic;
+    color: #555; /* Muted gray color */
+    margin-top: 8px; /* Space between image and text */
+    line-height: 1.4;
+}
+
+.reference a {
+    color: #777;
+    word-break: break-all; /* Prevents long URLs from overflowing */
+}
+
+/* 2. Styling for New Artist Section */
+#artists {
+    padding: 60px 0; /* Standard section padding */
+    background: #fff; /* Give it a white background */
+}
+
+#artists .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem; /* Add padding for mobile */
+}
+
+.artist-text p {
+    margin-bottom: 1.5rem; /* Space between paragraphs */
+    line-height: 1.7;
+    font-family: var(--ff-body);
+    font-size: 1.1rem;
+    color: var(--dark);
+}
+
+.artist-text h2 {
+    font-family: var(--ff-heading);
+    font-size: 2rem;
+    color: var(--dark-navy);
+    margin-bottom: 1.5rem;
+}
+
+/* 3. Styling for Responsive YouTube Embed */
+.video-container {
+    position: relative;
+    /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin-top: 2rem; /* Space above the video */
+    background: #000;
+    border-radius: 8px; /* Optional: adds rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* ============================================ */
+/* References Section Styles (Copied)           */
+/* ============================================ */
+
+.references-section {
+    background: #ffffff; /* White background */
+    padding: 4rem 1rem;
+    border-top: 1px solid #eee; /* Light separator line */
+}
+
+/* * Note: This container is wider (1200px) 
+ * to match the rest of movement.html
+*/
+.references-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.references-section h2 {
+    font-family: var(--ff-heading, 'Space Mono', monospace);
+    font-size: 2rem;
+    color: var(--dark-navy, #333);
+    margin-bottom: 2rem;
+    text-align: center;
+    border-bottom: 3px solid #FFD700; /* Yellow divider */
+    padding-bottom: 1rem;
+    display: inline-block; /* Keeps divider from full width */
+}
+
+/* Center the heading */
+.references-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reference-list p {
+    font-family: var(--ff-body, 'Lexend Deca', sans-serif);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 1.5rem;
+    /* This will break long URLs nicely */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.reference-list a {
+    color: var(--dark-navy, #007bff);
+    text-decoration: none;
+}
+
+.reference-list a:hover {
+    text-decoration: underline;
+}

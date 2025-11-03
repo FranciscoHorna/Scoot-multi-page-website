@@ -8,63 +8,64 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-
     <link rel="shortcut icon" href="./assets/favicon-32x32.png" type="image/x-icon">
-
-    <!-- Add Google Fonts for a cooler font -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="./css/style.css">
 
-    <title>Frontend Mentor | Scoot</title>
+    <title>The Beat Keepers | Salsa</title>
 </head>
 
-<body style="margin: 0; overflow: hidden;"> <!-- Disable all scrolling -->
+<body>
 
-    <!-- Full-screen hero background -->
-    <div style="position: relative; height: 100vh; width: 100vw;">
-        <!-- Hero image as background -->
-        <picture style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
-            <source media="(min-width: 57.5rem)" srcset="./assets/img/america.jpg">
-            <img src="./assets/img/america.jpg" alt="" 
-                 style="width: 100%; height: 100%; object-fit: cover;">
+    <header>
+        <section id="header">
+            <div class="header container">
+                <nav>
+                    <div class="nav-bar">
+                        <div class="logo">
+                             <a href="./index.html"><img src="./assets/img/namelogo (2).png" alt="The Beat Keepers"></a>
+                        </div>
+                        <div class="nav-list">
+                            <div class="hamburger">
+                                <div class="bar"></div>
+                            </div>
+                            <ul class="nav-item">
+                                <li><a href="./about.html">History</a></li>
+                                <li><a href="./movement.html">Movement</a></li>
+                                <li><a href="./location.html">Place</a></li>
+                                <li><a href="./careers.html">Sound</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+    </header>
+
+    <main class="hero-container">
+        
+        <picture>
+            <source media="(min-width: 57.5rem)" srcset="./assets/img/Background.jpeg">
+            <img src="./assets/img/Background.jpeg" alt="Salsa dancers performing outdoors">
         </picture>
 
-        <!-- Header positioned over hero -->
-        <header style="position: relative; z-index: 1; background: white; padding: 6px 0;">
-            <section id="header">
-                <div class="header container">
-                    <nav>
-                        <div class="nav-bar">
-                            <div class="logo">
-                                <a href=""><img src="./assets/img/namelogo.png" style="width: 240px; height: auto;"></a>
-                            </div>
-                            <div class="nav-list">
-                                <div class="hamburger">
-                                    <div class="bar"></div>
-                                </div>
-                                <ul class="nav-item">
-                                    <li><a href="./about.html">About me</a></li>
-                                    <li><a href="./location.html">Language & Literacy Project</a></li>
-                                    <li><a href="./careers.html">Learning English</a></li>
-                                    <li><a href="./culture.html">Cultural Identity</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </section>
-        </header>
+        <div class="hero-overlay"></div>
 
-        <!-- Hero text overlay -->
-        <div class="hero-desc" 
-             style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; text-align: center;">
+        <div class="hero-desc">
             <div class="text">
-                <h1 style="color: white; margin: 0; font-family: 'Bebas Neue', sans-serif; font-size: 4rem; letter-spacing: 2px;">Multimodal Project</h1>
-                <p style="color: white; margin: 0; font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 700; margin-top: 10px;">English 1110 M02 Spring 2025</p>
+                <h1>CROSS CULTURAL STUDY OF SALSA</h1>
+                <p class="hero-subtitle">Dance 1110G, Fall 2025</p>
+                <p class="hero-subtitle">The Beat Keepers Team: Azul, Ava, Francisco, Ruby & Ryan</p>
             </div>
         </div>
-    </div>
+
+        <div class="hero-image-reference">
+            <p>
+                Horna, Francisco. <i>Salsa in Motion</i>. Digital image created using Gemini Nano Banana. October 13, 2025.
+            </p>
+        </div>
+
+    </main>
 
     <script>
         // Hamburger menu toggle
